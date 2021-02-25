@@ -1,5 +1,4 @@
-
-// 简单的只有是否逻辑
+// 执行简单的只有是否逻辑
 type id = number;
 // 规则
 export interface IRule {
@@ -89,7 +88,7 @@ function inputFactor() {
     Facts.push({
         ruleId: 0,
         confidence: 1,
-        bool: false,
+        bool: true,
     });
     Facts.push({
         ruleId: 10,
@@ -99,12 +98,12 @@ function inputFactor() {
     Facts.push({
         ruleId: 100,
         confidence: 1,
-        bool: true,
+        bool: false,
     });
     Facts.push({
         ruleId: 1000,
         confidence: 1,
-        bool: true,
+        bool: false,
     });
 }
 function matchRules() {
@@ -126,13 +125,13 @@ function matchResult(res: number) {
             console.log('this is a Bird');
             break;
         case parseInt(Result.Cat, 2):
-            console.log('this is a Bird');
+            console.log('this is a Cat');
             break;
         case parseInt(Result.Lizard, 2):
-            console.log('this is a Bird');
+            console.log('this is a Lizard');
             break;
         case parseInt(Result.Snake, 2):
-            console.log('this is a Bird');
+            console.log('this is a Snake');
             break;
         default:
             console.log('known');
