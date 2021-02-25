@@ -26,7 +26,7 @@ export enum Result {
 const Rules: IRule[] = [];
 const Facts: IFact[] = [];
 // 人机交互界面、知识库、综合数据库、推理机、解释器、知识获取等6个部分构成
-export function main() {
+export function processSystem() {
     initRules();
     inputFactor();
     const res = matchRules();

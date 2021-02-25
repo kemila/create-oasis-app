@@ -1,11 +1,11 @@
 import React from "react";
 import { createOasis } from "./oasis";
-import { main } from "./oasis/test/processystem";
+import { processSystem } from "./oasis/test/processSystem";
 
 function App() {
 	React.useEffect(() => {
 		createOasis();
-		main();
+		processSystem();
 	}, []);
 
 	return (
