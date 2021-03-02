@@ -1,5 +1,5 @@
 import { IFact, IRule } from "./i_process_system";
-import { RuleManager } from "./rule_manager";
+import { EN_RULE, RuleManager } from "./rule_manager";
 
 class FactManagerImpl {
     private _facts: IFact[] = [];
@@ -17,23 +17,27 @@ class FactManagerImpl {
         let bool = false;
         let confidence = 1;
         switch (rule.id) {
-            case 'cold-blooded':
+            case EN_RULE.LIVED:
+                bool = true;
+                confidence = 1;
+            case EN_RULE.COLDBLOOD:
                 bool = true;
                 confidence = 1;
                 break;
-            case 'leg':
+            case EN_RULE.LEG:
                 bool = true;
                 confidence = 1;
                 break;
-            case 'feather':
+            case EN_RULE.FEATHER:
                 bool = false;
                 confidence = 1;
                 break;
-            case 'fly':
+            case EN_RULE.FLY:
                 bool = false;
                 confidence = 1;
                 break;
             default:
+                confidence = 0.5;
                 break;
         }
         this._facts.push({
