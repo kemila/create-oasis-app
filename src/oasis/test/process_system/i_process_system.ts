@@ -1,8 +1,8 @@
 // 执行简单的只有是否逻辑
-type id = number;
+type id = string;
 // 规则
 export interface IRule {
-    id: id;
+    id: string;
     bit: number;
     description: string;
     preRules: id[];

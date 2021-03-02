@@ -1,10 +1,12 @@
+import { FactManager } from "./fact_manager";
+import { matchRulesAndFacts } from "./match";
+import { RuleManager } from "./rule_manager";
 
 // 人机交互界面、知识库、综合数据库、推理机、解释器、知识获取等6个部分构成
 export function processSystem() {
-    initRules();
-    inputFactor();
-    const res = matchRules();
-    matchResult(res);
+    RuleManager.initRules();
+    FactManager.inputFactor();
+    const res = matchRulesAndFacts(RuleManager.getRules(), FactManager.getFacts());
     console.log('res:!!!!!!!!!!!!!!!!!!!!!!!!!!!!', res);
     // 1. 实现流程：
 

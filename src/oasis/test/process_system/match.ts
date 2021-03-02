@@ -1,8 +1,10 @@
+import { IFact, IRule } from "./i_process_system";
+import { Result } from "./result_manager";
 
-function matchRules() {
+export function matchRulesAndFacts(rules: IRule[],facts: IFact[]) {
     let res = 0;
-    Facts.forEach((fact) => {
-        const rule = Rules.find((ru) => ru.id === fact.ruleId);
+    facts.forEach((fact) => {
+        const rule = rules.find((ru) => ru.id === fact.ruleId);
         if (rule) {
             const { bool } = fact;
             if (bool) {
@@ -10,8 +12,9 @@ function matchRules() {
             }
         }
     });
-    return res;
+    return matchResult(res);
 }
+
 function matchResult(res: number) {
     switch (res) {
         case parseInt(Result.Bird, 2):
