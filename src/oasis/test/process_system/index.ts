@@ -1,7 +1,7 @@
 import { FactManager } from "./fact_manager";
 import { matchRulesAndFacts } from "./match";
 import { RuleManager } from "./rule_manager";
-
+// https://blog.csdn.net/jjccwwbb/article/details/36873181
 // 人机交互界面、知识库、综合数据库、推理机、解释器、知识获取等6个部分构成
 export function processSystem() {
     RuleManager.initRules();
